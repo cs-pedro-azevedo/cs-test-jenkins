@@ -1,3 +1,4 @@
 [submodule "submodule/jenkins-csbilling"]
 	path = submodule/jenkins-csbilling
-	url = git@github.com:cs-pedro-azevedo/jenkins-csbilling.git
+	url = https://github.com/cs-pedro-azevedo/jenkins-csbilling.git 
+#	url = git@github.com:cs-pedro-azevedo/jenkins-csbilling.git
