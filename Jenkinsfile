@@ -1,7 +1,18 @@
 node('master'){
-    stage 'testAuthentication'
+    stage 'Testing Conectivity'
         checkout scm
-        def nodeHome = tool name: 'NodeJS v5.10.0'
-        env.PATH="${env.PATH}:${nodeHome}/bin"
-        sh './start_environment.sh'
+        sh '"#!/bin/bash
+
+        for lines in `cat list.txt`
+            do
+                ping -c 5 $lines
+                    done"'
+
+
+
+                    stage 'Start App'
+                    checkout scm
+                    def nodeHome = tool name: 'v5.10.0', type: 'jenkins.plugins.nodejs.tools.NodeJSInstallation'
+                    env.PATH="${env.PATH}:${nodeHome}/bin"
+                    sh './start_environment.sh'
 }
