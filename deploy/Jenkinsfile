@@ -1,7 +1,7 @@
 node('master'){
     stage 'Testing Conectivity'
         checkout scm
-        sh '''for lines in `cat list.txt`
+        sh '''for lines in `cat ./appBash/list.txt`
         do
             echo $lines
                 done'''
