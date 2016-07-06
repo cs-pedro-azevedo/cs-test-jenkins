@@ -3,12 +3,12 @@ node('master'){
         checkout scm
         sh '''for lines in `cat list.txt`
         do
-            ping -c 5 $lines
+            echo $lines
                 done'''
 
-                stage 'Start App'
-                checkout scm
-                def nodeHome = tool name: 'v5.10.0', type: 'jenkins.plugins.nodejs.tools.NodeJSInstallation'
-                env.PATH="${env.PATH}:${nodeHome}/bin"
-                sh './start_environment.sh'
+     stage 'Start App'
+        checkout scm
+        def nodeHome = tool name: 'v5.10.0', type: 'jenkins.plugins.nodejs.tools.NodeJSInstallation'
+        env.PATH="${env.PATH}:${nodeHome}/bin"
+        sh './appNode/start_environment.sh'
 }
