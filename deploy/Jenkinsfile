@@ -8,7 +8,8 @@ node('master'){
 
      stage 'Start App'
         checkout scm
-        def nodeHome = tool name: 'v5.10.0', type: 'jenkins.plugins.nodejs.tools.NodeJSInstallation'
+        def nodeHome = tool name: 'v5.10.0'
+//        def nodeHome = tool name: 'v5.10.0', type: 'jenkins.plugins.nodejs.tools.NodeJSInstallation'
         env.PATH="${env.PATH}:${nodeHome}/bin"
         sh './appNode/start_environment.sh'
 }
